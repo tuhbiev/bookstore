@@ -1,18 +1,18 @@
 {% extends '_base.html' %}
 {% load static %}
 
-{% block title %}Home{% endblock title %}
+{% block title %}Главная{% endblock title %}
 
 {% block content %}
-    <h1>Homepage</h1>
+    <h1>Главная</h1>
     <img class = "bookcover" src="{% static 'images/book_design_2.jpg' %}">
     {% if user.is_authenticated %}
-        Hi {{ user.username }}!
-        <p><a href="{% url 'logout' %}">Logout</a></p>
+        Привет {{ user.username }}!
+        <p><a href="{% url 'account_logout' %}">Выйти</a></p>
     {% else %}
-        <p>You are not logged in</p>
-        <a href="{% url 'login' %}">Login</a> 
-        <a href="{% url 'signup' %}">Sign Up</a>   
+        <p>Вы не авторизовалисьы</p>
+        <p><a href="{% url 'account_login' %}">Авторизироваться</a></p> 
+        <a href="{% url 'account_signup' %}">Зарегистрироваться</a>   
     {% endif %}
 
 {% endblock content %}
