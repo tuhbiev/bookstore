@@ -4,6 +4,9 @@ services:
     web:
         build: .
         command: python /git/manage.py runserver 0.0.0.0:8000
+        environment:
+            - NEW_-SECRET_KEY=p_skgrenjvswe23980+-=w323/*ewrrfffsdf871
+            - DEBUG=1
         volumes: 
             - .:/git
         ports: 

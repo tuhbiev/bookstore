@@ -4,9 +4,9 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-a*-fm@+_@5e%4w&9b$!q!0qk6#0!c)oi&19k^r7_k%wo^rwpgi'
+SECRET_KEY = os.environ.get('NEW_-SECRET_KEY')
 
-DEBUG = True
+DEBUG = int(os.environ.get('DEBUG', default=0))
 
 ALLOWED_HOSTS = []
 
